@@ -3086,6 +3086,7 @@ dependencies = [
  "os_str_bytes",
  "reqwest",
  "rpm-rs",
+ "serde",
  "sha2 0.9.1",
  "slog",
  "starlark",
