@@ -50,7 +50,9 @@ jobs:
   - script: cargo build --workspace --exclude oxidized-importer
     displayName: Build
 
-  - script: cargo test --workspace --exclude oxidized-importer
+  - script: |
+        export LD_LIBRARY_PATH="/opt/hostedtoolcache/Python/3.8.*/x64/lib:Users/runner/hostedtoolcache/Python/3.8.*/x64/lib:$LD_LIBRARY_PATH"
+        cargo test --workspace --exclude oxidized-importer
     displayName: Test
     env:
       IN_CI: '1'
