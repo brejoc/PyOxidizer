@@ -20,6 +20,10 @@ jobs:
     - script: sudo apt-get install -y libyaml-dev
       displayName: Install libyaml
 
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '3.8'
+
   - ${{ if ne(parameters.name, 'Windows') }}:
     - script: |
         curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain $RUSTUP_TOOLCHAIN
